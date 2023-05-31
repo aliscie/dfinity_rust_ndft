@@ -4,10 +4,14 @@ use ic_cdk::export::candid::{candid_method, export_service};
 #[candid_method(query)]
 #[ic_cdk::query]
 fn say_hola(name: String) -> String {
-    format!("Hello, {}!", name)
+    format!("helo from nftcanister, {}!", name)
 }
 
-
+#[candid_method(query)]
+#[ic_cdk::query]
+fn get_my_const() -> &'static str {
+    "const from nft cnaister "
+}
 
 // #[derive(CandidType)]
 // struct NFT {
@@ -50,29 +54,31 @@ fn say_hola(name: String) -> String {
 // }
 
 
-// #[ic_cdk_macros::query(name = "__get_candid_interface_tmp_hack")]
-// fn export_candid() -> String {
-//     export_service!();
-//     __export_service()
-// }
-//
-// #[cfg(test)]
-// mod tests {
-//     use super::*;
-//     use std::env;
-//     use std::fs::{create_dir_all, write};
-//     use std::path::PathBuf;
-//
-//     #[test]
-//     fn save_candid() {
-//         let dir = PathBuf::from("/Users/ahmed/Desktop/simple_nft/src/nft_canister");
-//         match create_dir_all(&dir) {
-//             Ok(_) => println!("Successfully created directory"),
-//             Err(e) => println!("Failed to create directory: {}", e),
-//         }
-//
-//         let res = write(dir.join("nft_canister.did"), export_candid());
-//         println!("-------- Wrote to {:?}", dir);
-//         println!("-------- res {:?}", res);
-//     }
-// }
+#[ic_cdk_macros::query(name = "__get_candid_interface_tmp_hack")]
+fn export_candid() -> String {
+    export_service!();
+    __export_service()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::env;
+    use std::fs::{create_dir_all, write};
+    use std::path::PathBuf;
+
+    #[test]
+    fn save_candid() {
+        let dir = PathBuf::from("/Users/ahmed/Desktop/simple_nft/src/nft_canister");
+        match create_dir_all(&dir) {
+            Ok(_) => println!("Successfully created directory"),
+            Err(e) => println!("Failed to create directory: {}", e),
+        }
+
+        let res = write(dir.join("nft_canister.did"), export_candid());
+        println!("-------- Wrote to {:?}", dir);
+        println!("-------- res {:?}", res);
+    }
+}
+
+fn main() {}

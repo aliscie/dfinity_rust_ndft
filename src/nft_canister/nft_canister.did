@@ -1,0 +1,4 @@
+service : {
+  get_my_const : () -> (text) query;
+  say_hola : (text) -> (text) query;
+}
