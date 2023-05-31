@@ -1,5 +1,5 @@
 [package]
-name = "simple_nft_backend"
+name = "nft_canister"
 version = "0.1.0"
 edition = "2021"
 
@@ -13,3 +13,9 @@ candid = "0.8.4"
 ic-cdk = "0.7"
 ic-cdk-timers = "0.1" # Feel free to remove this dependency if you don't need timers
 ic-cdk-macros = "0.6.10"
+
+
+
+[[bin]]
+name = "nft_canister"
+path = "src/lib.rs"

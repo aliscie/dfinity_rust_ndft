@@ -5,6 +5,11 @@
       "package": "simple_nft_backend",
       "type": "rust"
     },
+    "nft_canister": {
+      "candid": "src/nft_canister/nft_canister.did",
+      "package": "nft_canister",
+      "type": "rust"
+    },
     "simple_nft_frontend": {
       "dependencies": [
         "simple_nft_backend"

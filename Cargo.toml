@@ -1,4 +1,5 @@
 [workspace]
 members = [
     "src/simple_nft_backend",
+    "src/nft_canister",
 ]
