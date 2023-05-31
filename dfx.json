@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "simple_nft_backend": {
+      "candid": "src/simple_nft_backend/simple_nft_backend.did",
+      "package": "simple_nft_backend",
+      "type": "rust"
+    },
+    "simple_nft_frontend": {
+      "dependencies": [
+        "simple_nft_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/simple_nft_frontend/src/index.html"
+      },
+      "source": [
+        "src/simple_nft_frontend/assets",
+        "dist/simple_nft_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
